@@ -1,7 +1,9 @@
 package com.example.travelblog;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -79,5 +81,15 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         textUsernameLayout.setEnabled(false);
         textPasswordInput.setEnabled(false);
+        Handler hander = new Handler();
+        hander.postDelayed(() -> {
+            startMainActivity();
+            finish();
+        }, 2000);
+    }
+
+    private void startMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
