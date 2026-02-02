@@ -19,4 +19,8 @@ public class BlogPreferences {
     public void setLoggedIn(boolean loggedIn) {
         sharedPreferences.edit().putBoolean(KEY_LOGIN_STATE, loggedIn).apply();
     }
+
+    public void clear() {
+        sharedPreferences.edit().remove(KEY_LOGIN_STATE).apply();
+    }
 }
