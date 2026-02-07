@@ -4,23 +4,23 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class BlogPreferences {
-    private static final String KEY_LOGIN_STATE = "key_login_state";
+  private static final String KEY_LOGIN_STATE = "key_login_state";
 
-    private final SharedPreferences sharedPreferences;
+  private final SharedPreferences sharedPreferences;
 
-    public BlogPreferences(Context context) {
-        sharedPreferences = context.getSharedPreferences("travel-blog", Context.MODE_PRIVATE);
-    }
+  public BlogPreferences(Context context) {
+    sharedPreferences = context.getSharedPreferences("travel-blog", Context.MODE_PRIVATE);
+  }
 
-    public boolean isLoggedIn() {
-        return sharedPreferences.getBoolean(KEY_LOGIN_STATE, false);
-    }
+  public boolean isLoggedIn() {
+    return sharedPreferences.getBoolean(KEY_LOGIN_STATE, false);
+  }
 
-    public void setLoggedIn(boolean loggedIn) {
-        sharedPreferences.edit().putBoolean(KEY_LOGIN_STATE, loggedIn).apply();
-    }
+  public void setLoggedIn(boolean loggedIn) {
+    sharedPreferences.edit().putBoolean(KEY_LOGIN_STATE, loggedIn).apply();
+  }
 
-    public void clear() {
-        sharedPreferences.edit().remove(KEY_LOGIN_STATE).apply();
-    }
+  public void clear() {
+    sharedPreferences.edit().remove(KEY_LOGIN_STATE).apply();
+  }
 }
